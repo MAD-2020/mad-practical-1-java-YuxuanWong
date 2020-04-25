@@ -27,6 +27,33 @@ public class Question5
      */
      
     Scanner in = new Scanner(System.in);
+    System.out.println("Enter length of array: ");
+    int i = in.nextInt();
+    
+    int[] numList = new int[i];
+    for (int x = 0; x < i; x++){
+      System.out.println("Enter an integer: ");
+      int a = in.nextInt();
+      numList[x] = a;
+    }
+    
+    int max = 0;
+    int mode = 0;
+    
+    for (int x = 0; x < i; x++){
+      int count = 0;
+       for (int y = 0; y < i; y++){
+        if (numList[y]==numList[x]){
+          count++;
+        }
+      }
+      if (count > max){
+          max = count;
+          mode = numList[x];
+        }
+    }
+    
+    System.out.println(mode);
     
   }
 }
